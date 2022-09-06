@@ -6,7 +6,5 @@ grafana:
     restart: unless-stopped
     volumes:
       - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
-      - grafana-data:/var/lib/grafana
+      - ./grafana/grafana-data:/var/lib/grafana
       
-volumes:
-  grafana-data:
