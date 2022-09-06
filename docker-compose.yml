@@ -1,0 +1,12 @@
+# https://grafana.com/docs/grafana/v9.0/setup-grafana/configure-docker/
+grafana:
+    image: grafana/grafana-oss:9.1.3-ubuntu
+    ports:
+      - 13254:3000
+    restart: unless-stopped
+    volumes:
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - grafana-data:/var/lib/grafana
+      
+volumes:
+  grafana-data:
